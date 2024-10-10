@@ -1,0 +1,11 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore environment variable file
+.env
+
+# Other common ignores (optional)
+.DS_Store         # macOS file
+Thumbs.db         # Windows file
+*.log             # Log files
+npm-debug.log     # npm debug log
