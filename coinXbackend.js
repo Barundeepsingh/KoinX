@@ -18,7 +18,8 @@ mongoose.connect(mongoURL, {
 .catch(err => console.error('MongoDB connection error:', err));
 
 const coinPrice = (ids) => {
-    const apiURL = `${process.env.apiUrl}?ids=${ids}&vs_currencies=usd&include_market_cap=true&include_24hr_change=true`;
+    const apiKey = process.env.apiKey;
+    const apiURL = `${process.env.apiUrl}?ids=${ids}&vs_currencies=usd&include_market_cap=true&include_24hr_change=true&x-cg-demo-api-key=${apiKey}`;
     return axios.get(apiURL)
     .then(response => {
         return response.data
